@@ -1,7 +1,8 @@
-/* Remove the navbar's default margin-bottom and rounded borders */ 
+ /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
+	background-color: #f1f1f1;
       margin-bottom: 0;
-      border-radius: 0;
+      border-radius: 0	;
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -13,19 +14,28 @@
       background-color: #f1f1f1;
       height: 100%;
     }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
+	.serif {
+		font-family: "Comic Sans MS", Times, serif;
+	}
+	#rcorners3 {
+	  border-radius: 15px;
+	  background-position: left top;
+	  background-repeat: repeat;
+	  padding: 5px;  
+	}
+	table, th, td {
+	 align = center;
+        border: 1px solid black;
+        border-collapse: collapse;
       }
-      .row.content {height:auto;} 
-    }
+      th, td {
+        padding: 20px;
+        text-align: left;
+      }
+      table#t01 {
+        width: 100%;
+        background-color: #f1f1f1;
+      }
+	  h1{
+		align = center;	
+		}
