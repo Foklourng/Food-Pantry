@@ -19,7 +19,8 @@
       <ul class="nav navbar-nav">
 		<a href="https://www.fresno.edu" target="_blank"> 
 
-		<img id="rcorners3"  src="C:\Users\muy heng\Desktop\Spring 2020\CSSE-352\Group Project\FPULogo.png" alt="Poster" height="70" width="150" />
+		<img id="rcorners3"  src="FPULogo.png" alt="Poster" height="70" width="150" />
+
 		</a>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -37,16 +38,17 @@
 	  
 	  <p>
              <label>Filter</label>
-             <select id = "myList">
-               <option value = "1">Can</option>
+             <select id = 'filterText' onchange ="filter(value)">
+				<option disabled selected>Select</option>
+               <option value = "1">Can </option > 			   
                <option value = "2">Snack</option>
                <option value = "3">Drink</option>
                <option value = "4">Noodle</option>
+			   <option value = "5">All</option>			   
              </select>
-			 
+
 			 <label>Search</label>
-             <input type="text" id="T0" placeholder="Enter Item's Name">	
-			 <button>Go!</button>
+             <input type="text" id="myInput" placeholder="Enter Item's Name">	
           </p>
    <table id="t01" style="width:100%">
   <tr style="height:100px">
@@ -59,8 +61,8 @@
     
     	
   <tbody id='t-body'>
-    
-  </tbody>
+      
+	  </tbody>
  
 </table>
 <hr>
@@ -77,7 +79,9 @@
 	  <div class="well">
         <p>Contact Information:</p>
 		<p>Phone: 559-748-9848</p>
-		<p>Email: abcdf@gmail.com</p>
+		<p>Email:
+		<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> abcdf@gmail.com</a>
+
       </div>
     </div>
   </div>
