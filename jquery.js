@@ -12,7 +12,7 @@ let spreadsheetID = "1849CSeI6TmOPOeuwDMdPDa5f-xDNT6aCOr1OZB96kwQ"; // Sheet ID
 
                         jQuery("#t-body").append(`
                             <tr>
-                                <td><img src=${pic} alt="Laptop" height="200" width="200" ></td>                              
+                                <td><img src=${pic} alt="Laptop" height="200" width="200" ></td>       
                                 <td>${name}</td>
                                 <td>${stat}</td>
                                 <td>${lim}</td>
@@ -96,6 +96,7 @@ let spreadsheetID = "1849CSeI6TmOPOeuwDMdPDa5f-xDNT6aCOr1OZB96kwQ"; // Sheet ID
 							`);
 							
 						}
+
                     });
                 
                     
@@ -112,3 +113,4 @@ let spreadsheetID = "1849CSeI6TmOPOeuwDMdPDa5f-xDNT6aCOr1OZB96kwQ"; // Sheet ID
     });
   });
 });
+
