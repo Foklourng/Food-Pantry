@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>FPU Food Pantry</title>
@@ -14,56 +14,57 @@
 
 <nav class="navbar" bgcolor = "#f1f1f1">
   <div class="container-fluid">
-    
+
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-		<a href="https://www.fresno.edu" target="_blank"> 
+		<a href="https://www.fresno.edu" target="_blank">
 
 		<img id="rcorners3"  src="FPULogo.png" alt="Poster" height="70" width="150" />
 
 		</a>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> <u>Admin</u></a></li>
+        <li><a href="login2.html">Admin</a></li>
+      <ul class="nav navbar-nav navbar-right">
       </ul>
     </div>
   </div>
 </nav>
-  
-<div class="container-fluid text-center">    
+
+<div class="container-fluid text-center">
   <div class="row content">
-    <div class="col-sm-9 text-left"> 
+    <div class="col-sm-9 text-left">
       <h1 class="serif" style="text-align:center">Welcome To Food Pantry</h1>
 	  <hr>
-	  
+
 	  <p>
              <label>Filter</label>
              <select id = 'filterText' onchange ="filter(value)">
 				<option disabled selected>Select</option>
-               <option value = "1">Can </option > 			   
+               <option value = "1">Can </option >
                <option value = "2">Snack</option>
                <option value = "3">Drink</option>
                <option value = "4">Noodle</option>
-			   <option value = "5">All</option>			   
+			   <option value = "5">All</option>
              </select>
 
 			 <label>Search</label>
-             <input type="text" id="myInput" placeholder="Enter Item's Name">	
+             <input type="text" id="myInput" placeholder="Enter Item's Name">
           </p>
    <table id="t01" style="width:100%">
   <tr style="height:100px">
-   
+
       <th ><u>Pictures<u/></th>
         <th ><u>Item<u/></th>
         <th><u>Status<u/></th>
         <th><u>Limit<u/></th>
       </tr>
-    
-    	
+
+
   <tbody id='t-body'>
-      
+
 	  </tbody>
- 
+
 </table>
 <hr>
     </div>
