@@ -20,7 +20,6 @@
 		<a href="https://www.fresno.edu" target="_blank"> 
 
 		<img id="rcorners3"  src="FPULogo.png" alt="Poster" height="70" width="150" />
-
 		</a>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -40,17 +39,18 @@
              <label>Filter</label>
              <select id = 'filterText' onchange ="filter(value)">
 				<option disabled selected>Select</option>
-               <option value = "1">Can </option > 			   
-               <option value = "2">Snack</option>
-               <option value = "3">Drink</option>
-               <option value = "4">Noodle</option>
-			   <option value = "5">All</option>			   
+               <option value = "1">Canned </option > 			   
+               <option value = "2">Cereal</option>
+               <option value = "3">Refrigerator</option>
+               <option value = "4">Personal/Toiletries</option>
+			   <option value = "5">Other</option>
+			   <option value = "6">All</option>			   
              </select>
 
 			 <label>Search</label>
              <input type="text" id="myInput" placeholder="Enter Item's Name">	
           </p>
-   <table id="t01" style="width:100%">
+   <table class="table"  id="t01" style="width:100%">
   <tr style="height:100px">
    
       <th ><u>Pictures<u/></th>
@@ -61,32 +61,54 @@
     
     	
   <tbody id='t-body'>
-      
+      <tr>
+	  </tr>
 	  </tbody>
  
 </table>
+
+
 <hr>
     </div>
-    <div class="col-sm-3 sidenav">
+	<div class="col-sm-3 sidenav">
       <div class="well">
         <p>Open Hour:</p>
-		<p>Monday: 11am-3pm</p>
-		<p>Tuesday: 11am-3pm</p>
-		<p>Wednesday: 11am-3pm</p>
-		<p>Thursday: 11am-3pm</p>
-		<p>Friday: 11am-3pm</p>
+		<p>Mon - Fri</p>
+		<p>11am - 3pm</p>
+		<p>Email:
+		<a href="mailto:osf.student@fresno.edu?Subject=Hello%20again" target="_top">osf.student@fresno.edu</a>
+</p><p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdJKy7aT9Gdb-U0bvPxESCMFe0YlrlBIfF8FfUYMoXV3z4ZEA/viewform">FPU Sunbird Pantry Express</a></p>
+
       </div>
 	  <div class="well">
-        <p>Contact Information:</p>
-		<p>Phone: 559-748-9848</p>
-		<p>Email:
-		<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top"> abcdf@gmail.com</a>
+		
 
-      </div>
-    </div>
-  </div>
+		
+	
+	  <div>
+
+<p><b>Donation </b></p>
+
+
+
+
+
+<button class="accordion">What can I donate?</button>
+<div class="panel">
+  <p>You can donate things like easy open baked beans, easy open canned veggies, microwavable pasta meals, microwaveable soup,cereal, granola bars, rice, beans, frozen hot pockets, frozen burritos. </p> <p>You can also donate non-edible items like soap, pads, tampons, toothpaste, body wash, toothbrushes, deodorant, etc.</p> <p> If you are donating financially ,then go to this link : </p>
+<p><a href="https://app.mobilecause.com/form/3nrUVQ?vid=78uzh">Financial Donation</a></p>
+
 </div>
 
+<button class="accordion">How can I donate?</button>
+<div class="panel">
+  <p>You can directly donate to the FPU food pantry by dropping off the items during open hours.Address of FPU Food Pantry is 4847 E. Heaton Ave, Fresno CA, 93702.Map : <a href="https://www.google.com/maps/place/HH2,+4847+E+Heaton+Ave,+Fresno,+CA+93727/@36.7270994,-119.7365126,17z/data=!3m1!4b1!4m5!3m4!1s0x80945f03849c746d:0x4b5bb974e63a23a0!8m2!3d36.7270994!4d-119.7343239">Food Pantry</a></p> 
+ For finincial donation,you can directly donate online.You just need to go to this link : </p><p>
+  </p><p><a href="https://app.mobilecause.com/form/3nrUVQ?vid=78uzh">Financial Donation</a></p>
+
+</div>  
 
 </body>
+    <script src="donate.js"></script>
+
 </html>

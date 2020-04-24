@@ -12,7 +12,7 @@ let spreadsheetID = "1849CSeI6TmOPOeuwDMdPDa5f-xDNT6aCOr1OZB96kwQ"; // Sheet ID
 
                         jQuery("#t-body").append(`
                             <tr>
-                                <td><img src=${pic} alt="Laptop" height="200" width="200" ></td>       
+                                <td><img src=${pic} alt="Laptop" height="200" width="200" ></td>                              
                                 <td>${name}</td>
                                 <td>${stat}</td>
                                 <td>${lim}</td>
@@ -37,7 +37,7 @@ let spreadsheetID = "1849CSeI6TmOPOeuwDMdPDa5f-xDNT6aCOr1OZB96kwQ"; // Sheet ID
                         let lim = this.gsx$limit.$t;
                         let type = this.gsx$type.$t;
 						if(t== "1"){
-							if(type == "Can")
+							if(type == "canned")
 							{
 							jQuery("#t-body").append(`
 								<tr>
@@ -49,7 +49,7 @@ let spreadsheetID = "1849CSeI6TmOPOeuwDMdPDa5f-xDNT6aCOr1OZB96kwQ"; // Sheet ID
 							`);
 							}
 						}else if(t== "2"){
-							if(type == "Snack")
+							if(type == "cereal")
 							{
 							jQuery("#t-body").append(`
 								<tr>
@@ -61,7 +61,7 @@ let spreadsheetID = "1849CSeI6TmOPOeuwDMdPDa5f-xDNT6aCOr1OZB96kwQ"; // Sheet ID
 							`);
 							}
 						}else if(t== "3"){
-							if(type == "Drink")
+							if(type == "Refrigerator")
 							{
 							jQuery("#t-body").append(`
 								<tr>
@@ -73,7 +73,7 @@ let spreadsheetID = "1849CSeI6TmOPOeuwDMdPDa5f-xDNT6aCOr1OZB96kwQ"; // Sheet ID
 							`);
 							}
 						}else if(t== "4"){
-							if(type == "Noodle")
+							if(type == "Personal/Toiletries")
 							{
 							jQuery("#t-body").append(`
 								<tr>
@@ -86,6 +86,19 @@ let spreadsheetID = "1849CSeI6TmOPOeuwDMdPDa5f-xDNT6aCOr1OZB96kwQ"; // Sheet ID
 							}
 						}
 						else if(t== "5"){
+							if(type == "Other")
+							{
+							jQuery("#t-body").append(`
+								<tr>
+									<td><img src=${pic} alt="Laptop" height="200" width="200" ></td>                              
+									<td>${name}</td>
+									<td>${stat}</td>
+									<td>${lim}</td>
+								</tr>
+							`);
+							}
+						}
+						else if(t== "6"){
 							jQuery("#t-body").append(`
 								<tr>
 									<td><img src=${pic} alt="Laptop" height="200" width="200" ></td>                              
@@ -96,7 +109,6 @@ let spreadsheetID = "1849CSeI6TmOPOeuwDMdPDa5f-xDNT6aCOr1OZB96kwQ"; // Sheet ID
 							`);
 							
 						}
-
                     });
                 
                     
@@ -113,4 +125,5 @@ let spreadsheetID = "1849CSeI6TmOPOeuwDMdPDa5f-xDNT6aCOr1OZB96kwQ"; // Sheet ID
     });
   });
 });
+
 
