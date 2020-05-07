@@ -1,0 +1,138 @@
+ /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+	background-color: #f1f1f1;
+      margin-bottom: 0;
+      border-radius: 0	;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+	.serif {
+		font-family: "Comic Sans MS", Times, serif;
+	}
+	
+
+ .btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+input, select {
+  border: 1px solid;
+  margin-bottom:  0.5em;
+  background-color: #f1f1f1;
+  padding: 5px;
+  font-size: 14px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 20%;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+
+
+	#rcorners3 {
+	  border-radius: 15px;
+	  background-position: left top;
+	  background-repeat: repeat;
+	  padding: 5px;  
+	}
+	table, th, td {
+	 align : center;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 20px;
+        text-align: left;
+      }
+      table#t01 {
+        width: 100%;
+        background-color: #f1f1f1;
+      }
+	  h1{
+		align : center;	
+		}
+    .plus {
+      --t:2px;   /* Thickness */
+      --l:40px;  /* size of the symbol */
+      --s:10px;  /* space around the symbol */
+      --c1:#fff; /* Plus color*/
+      --c2:#000; /* background color*/
+    
+      display:inline-block;
+      width:var(--l);
+      height:var(--l);
+      padding:var(--s);
+      box-sizing:border-box; /*Remove this if you don't want space to be included in the size*/
+      
+      background:
+        linear-gradient(var(--c1),var(--c1)) content-box,
+        linear-gradient(var(--c1),var(--c1)) content-box,
+        var(--c2);
+      background-position:center;
+      background-size: 100% var(--t),var(--t) 100%;
+      background-repeat:no-repeat;
+    }
+    
+    .radius {
+      border-radius:50%;
+    }

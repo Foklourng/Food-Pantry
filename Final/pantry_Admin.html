@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FPU Food Pantry</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="jquery_admin.js" ></script>
+</head>
+<body>
+
+<nav class="navbar" bgcolor = "#f1f1f1">
+  <div class="container-fluid">
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+		<a href="https://www.fresno.edu" target="_blank"> 
+
+		<img id="rcorners3"  src="Images//FPULogo.png" alt="Poster" height="70" width="150" />
+		</a>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> <u>Admin</u></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-9 text-left"> 
+      <h1 class="serif" style="text-align:center">Welcome To Food Pantry</h1>
+	  <hr>
+	  
+	  <p>
+             <label>Filter</label>
+             <select id = 'filterText' onchange ="filter(value)">
+				<option disabled selected>Select</option>
+               <option value = "1">Canned </option > 			   
+               <option value = "2">Cereal</option>
+               <option value = "3">Refrigerator</option>
+               <option value = "4">Personal/Toiletries</option>
+              <option value = "5">Other</option>
+              <option value = "6" selected>All</option>			   
+             </select>
+
+			 <label>Search</label>
+             <input type="text" id="myInput" placeholder="Enter Item's Name">	
+             <button style="float: right;" class="btn" class="editbtn"value='${c}' onclick="" data-toggle="modal" data-target="#exampleModalCenter2"><i class="fa fa-plus"  ></i></button>
+          </p>
+   <table class="table"  id="t01" style="width:100%">
+  <tr style="height:100px">
+   
+      <th ><u>Pictures<u/></th>
+        <th ><u>Item<u/></th>
+        <th><u>Status<u/></th>
+        <th><u>Limit<u/></th>
+      </tr>
+    
+    	
+  <tbody id='t-body'>
+      <tr>
+	  </tr>
+	  </tbody>
+ 
+</table>
+
+
+<hr>
+    </div>
+	<div class="col-sm-3 sidenav">
+      <div class="well">
+        <p>Open Hour:</p>
+		<p>Mon - Fri</p>
+		<p>11am - 3pm</p>
+		<p>Email:
+		<a href="mailto:osf.student@fresno.edu?Subject=Hello%20again" target="_top">osf.student@fresno.edu</a>
+</p><p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdJKy7aT9Gdb-U0bvPxESCMFe0YlrlBIfF8FfUYMoXV3z4ZEA/viewform">FPU Sunbird Pantry Express</a></p>
+
+      </div>
+	  <div class="well">
+		
+
+		
+	
+	  <div>
+
+<p><b>Donation </b></p>
+
+
+
+
+
+<button class="accordion">What can I donate?</button>
+<div class="panel">
+  <p>You can donate things like easy open baked beans, easy open canned veggies, microwavable pasta meals, microwaveable soup,cereal, granola bars, rice, beans, frozen hot pockets, frozen burritos. </p> <p>You can also donate non-edible items like soap, pads, tampons, toothpaste, body wash, toothbrushes, deodorant, etc.</p> <p> If you are donating financially ,then go to this link : </p>
+<p><a href="https://app.mobilecause.com/form/3nrUVQ?vid=78uzh">Financial Donation</a></p>
+
+</div>
+
+<button class="accordion">How can I donate?</button>
+<div class="panel">
+  <p>You can directly donate to the FPU food pantry by dropping off the items during open hours.Address of FPU Food Pantry is 4847 E. Heaton Ave, Fresno CA, 93702.Map : <a href="https://www.google.com/maps/place/HH2,+4847+E+Heaton+Ave,+Fresno,+CA+93727/@36.7270994,-119.7365126,17z/data=!3m1!4b1!4m5!3m4!1s0x80945f03849c746d:0x4b5bb974e63a23a0!8m2!3d36.7270994!4d-119.7343239">Food Pantry</a></p> 
+ For finincial donation,you can directly donate online.You just need to go to this link : </p><p>
+  </p><p><a href="https://app.mobilecause.com/form/3nrUVQ?vid=78uzh">Financial Donation</a></p>
+
+</div>  
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">Edit</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button id="authorize_button" style="display: none;">Authorize</button>
+        <button id="signout_button" style="display: none;">Sign Out</button>
+        <button style="display: none;">Write Data</button>
+          <label>Name: </label>
+          <input type="text" id="firstN"><br>
+      <select id = 'status' onchange ="">
+        <option disabled selected>Status</option>
+               <option value = "1" selected>In Stock </option >         
+               <option value = "2">Low on Stock</option>
+               <option value = "3">Out of Stock</option>   
+             </select>
+             <br>
+             <select id = 'limit' onchange ="">
+        <option disabled selected>Limit</option>
+               <option value = "1" selected>1 </option >         
+               <option value = "2">2</option>
+               <option value = "3">3</option>   
+             </select>
+             <br>
+             <input type='file' id="sub" onchange="sub()"/>
+              <br><img id="myImg" src="#" alt="your image" style="display: none;" height=100 width=100>
+            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Return</button>
+        <button id="write_button" type="button" class="btn btn-primary" data-dismiss="modal" onclick="writeSampleData()">Submit</button>
+      </div>
+    </div>
+  </div>
+ 
+</div> 
+
+<!-- Delete Modal -->
+<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle3" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">Delete Confirmation</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        <button id="write_button2" type="button" class="btn btn-primary" data-dismiss="modal" onclick="makeApiCall()">Yes</button>
+      </div>
+    </div>
+  </div>
+ 
+</div> 
+
+
+<!-- Add Modal -->
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">Add</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button id="authorize_button" style="display: none;">Authorize</button>
+        <button id="signout_button" style="display: none;">Sign Out</button>
+        <button style="display: none;">Write Data</button>
+          <label>Name: </label>
+          <input type="text" id="firstN2"><br>
+      <select id = 'status2' onchange ="">
+        <option disabled selected>Status</option>
+               <option value = "1" selected>In Stock </option >         
+               <option value = "2">Low on Stock</option>
+               <option value = "3">Out of Stock</option>   
+             </select>
+             <br>
+             <select id = 'limit2' onchange ="">
+        <option disabled selected>Limit</option>
+               <option value = "1" selected>1 </option >         
+               <option value = "2">2</option>
+               <option value = "3">3</option>   
+             </select>
+             <br>
+             <input type='file' id="sub2" onchange="sub2()"/>
+              <br><img id="myImg2" src="#" alt="your image" style="display: none;" height=100 width=100>
+            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Return</button>
+        <button id="write_button2" type="button" class="btn btn-primary" data-dismiss="modal" onclick="writeSampleData1()">Submit</button>
+      </div>
+    </div>
+  </div>
+ 
+</div> 
+
+<script type="text/javascript">
+
+      
+  var CLIENT_ID = '42060966982-asi82361j77v7bnp54tkd6t2ccio9n7a.apps.googleusercontent.com';
+  var API_KEY = 'AIzaSyDhWnvE9vKzWUGdvYa5ZGh8f-uXCeuJXc8';
+
+  var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
+  var SCOPES = "https://www.googleapis.com/auth/spreadsheets"; // Authorize requests type
+
+  var spreadsheetId = '1849CSeI6TmOPOeuwDMdPDa5f-xDNT6aCOr1OZB96kwQ';
+
+  var authorizeButton = document.getElementById('authorize_button');
+  var signoutButton = document.getElementById('signout_button');
+  var writeButton = document.getElementById('write_button');
+
+  function handleClientLoad() {
+    gapi.load('client:auth2', initClient);
+  }
+
+  function makeApiCall() {
+      var params = {
+        // The spreadsheet to apply the updates to.
+        spreadsheetId: '1849CSeI6TmOPOeuwDMdPDa5f-xDNT6aCOr1OZB96kwQ',  // TODO: Update placeholder value.
+      };
+      
+      var batchUpdateSpreadsheetRequestBody = {
+        // A list of updates to apply to the spreadsheet.
+        // Requests will be applied in the order they are specified.
+        // If any request is not valid, no requests will be applied.
+        
+        requests: [
+            {
+            'deleteDimension':{
+            'range': {
+                'sheetId': '0',
+                'dimension': 'ROWS',
+                'startIndex': returnIN()-1,
+                'endIndex': returnIN()
+            }
+        }
+        }
+        ]  // TODO: Update placeholder value.
+        // Change the spreadsheet's title.
+
+        // TODO: Add desired properties to the request body.
+      };
+
+      var request = gapi.client.sheets.spreadsheets.batchUpdate(params, batchUpdateSpreadsheetRequestBody);
+      request.then(function(response) {
+        // TODO: Change code below to process the `response` object:
+        console.log(response.result);
+        location.reload();
+      }, function(reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
+    }
+
+  function initClient() { 
+    gapi.client.init({
+      apiKey: API_KEY,
+      clientId: CLIENT_ID,
+      discoveryDocs: DISCOVERY_DOCS,
+      scope: SCOPES
+    }).then(function () { // Handle Login State
+      gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+      updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+      authorizeButton.onclick = handleAuthClick;
+      signoutButton.onclick = handleSignoutClick;
+      //writeButton.onclick = writeSampleData;
+    }, function(error) {
+      console.warn(error);
+    });
+  }
+
+  function updateSigninStatus(isSignedIn) {
+    if (isSignedIn) {
+      authorizeButton.style.display = 'none';
+      queryData();
+    } else {
+      authorizeButton.style.display = 'inline-block';
+      signoutButton.style.display = 'none';
+      writeButton.style.display = 'none';
+    }
+  }
+
+  function handleAuthClick(event) {
+    gapi.auth2.getAuthInstance().signIn();
+  }
+
+  function handleSignoutClick(event) {
+    gapi.auth2.getAuthInstance().signOut();
+  }
+
+
+  function queryData() {
+    gapi.client.sheets.spreadsheets.values.get({
+      spreadsheetId: spreadsheetId,
+      range: 'table!A1:E',
+    }).then(function(response) {
+      var range = response.result;
+      if (range.values.length > 0) {
+        
+      }
+    }, function(response) {
+      setTableData('Error: ' + response.result.error.message);
+    });
+  }
+
+  function writeSampleData(){
+    
+    var tempData = document.getElementById('firstN').value;
+    var S = document.getElementById('status').value;
+    var L = document.getElementById('limit').value;
+    console.log("S is " + S);
+    var image = document.getElementById('myImg');
+    var imgIn = document.getElementById('sub');
+    image.style.display = "block";
+    var file = imgIn.value.split("\\");
+    var fileName = file[file.length-1];
+    image.src=fileName;
+    if(S==1)
+      S= "In Stock";
+    else if(S==2)
+      S= "Low On Stock";
+    else if(S==3)
+      S = "Out of Stock";
+    image.src = fileName;
+    if (tempData != null) {
+        let values = [[tempData]];
+        let mResource1 = {
+          values,
+        };
+         values = [[S]];
+        let mResource2 = {
+          values,
+        };
+         values = [[L]];
+        let mResource3 = {
+          values,
+        };
+         values = [[fileName]];
+        let mResource4 = {
+          values,
+        };
+        gapi.client.sheets.spreadsheets.values.update({
+          spreadsheetId: spreadsheetId,
+          range: "table!B"+returnIN(),
+          valueInputOption: 'RAW',
+          resource: mResource1
+        }).then((response) => {
+          var result = response.result;
+          console.log(`${result.updatedCells} cells updated.`);
+          location.reload();
+        });
+        gapi.client.sheets.spreadsheets.values.update({
+          spreadsheetId: spreadsheetId,
+          range: "table!C"+returnIN(),
+          valueInputOption: 'RAW',
+          resource: mResource2
+        }).then((response) => {
+          var result = response.result;
+          console.log(`${result.updatedCells} cells updated.`);
+          location.reload();
+        });
+        gapi.client.sheets.spreadsheets.values.update({
+          spreadsheetId: spreadsheetId,
+          range: "table!D"+returnIN(),
+          valueInputOption: 'RAW',
+          resource: mResource3
+        }).then((response) => {
+          var result = response.result;
+          console.log(`${result.updatedCells} cells updated.`);
+          location.reload();
+        });
+        gapi.client.sheets.spreadsheets.values.update({
+          spreadsheetId: spreadsheetId,
+          range: "table!A"+returnIN(),
+          valueInputOption: 'RAW',
+          resource: mResource4
+        }).then((response) => {
+          var result = response.result;
+          console.log(`${result.updatedCells} cells updated.`);
+          location.reload();
+        });
+      }
+      
+  }
+  function writeSampleData1(){
+    
+    var tempData2 = document.getElementById('firstN2').value;
+    var S2 = document.getElementById('status2').value;
+    var L2 = document.getElementById('limit2').value;
+    console.log("S is " + S2);
+    var image2 = document.getElementById('myImg2');
+    var imgIn2 = document.getElementById('sub2');
+    image2.style.display = "block";
+    var file2 = imgIn2.value.split("\\");
+    var fileName2 = file2[file2.length-1];
+    image2.src=fileName2;
+    if(S2==1)
+      S2= "In Stock";
+    else if(S2==2)
+      S2= "Low On Stock";
+    else if(S2==3)
+      S2 = "Out of Stock";
+    image2.src = fileName2;
+    if (tempData2 != null) {
+        let values = [[tempData2]];
+        let mResource5 = {
+          values,
+        };
+         values = [[S2]];
+        let mResource6 = {
+          values,
+        };
+         values = [[L2]];
+        let mResource7 = {
+          values,
+        };
+         values = [[fileName2]];
+        let mResource8 = {
+          values,
+        };
+        gapi.client.sheets.spreadsheets.values.update({
+          spreadsheetId: spreadsheetId,
+          range: "table!B"+returnLN(),
+          valueInputOption: 'RAW',
+          resource: mResource5
+        }).then((response) => {
+          var result = response.result;
+          console.log(`${result.updatedCells} cells updated.`);
+          location.reload();
+        });
+        gapi.client.sheets.spreadsheets.values.update({
+          spreadsheetId: spreadsheetId,
+          range: "table!C"+returnLN(),
+          valueInputOption: 'RAW',
+          resource: mResource6
+        }).then((response) => {
+          var result = response.result;
+          console.log(`${result.updatedCells} cells updated.`);
+          location.reload();
+        });
+        gapi.client.sheets.spreadsheets.values.update({
+          spreadsheetId: spreadsheetId,
+          range: "table!D"+returnLN(),
+          valueInputOption: 'RAW',
+          resource: mResource7
+        }).then((response) => {
+          var result = response.result;
+          console.log(`${result.updatedCells} cells updated.`);
+          location.reload();
+        });
+        gapi.client.sheets.spreadsheets.values.update({
+          spreadsheetId: spreadsheetId,
+          range: "table!A"+returnLN(),
+          valueInputOption: 'RAW',
+          resource: mResource8
+        }).then((response) => {
+          var result = response.result;
+          console.log(`${result.updatedCells} cells updated.`);
+          location.reload();
+        });
+      }
+      
+  }
+
+</script>
+
+<script async defer src="https://apis.google.com/js/api.js"
+  onload="
+    this.onload=function(){};
+    handleClientLoad()
+  "
+  onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+</body>
+    <script src="donate.js"></script>
+
+</html>
