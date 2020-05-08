@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- The title, some imported libraries, javascript and css -->
+  <title>FPU Food Pantry</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="user.css">
+  <script src="jquery.js" ></script>
+</head>
+<body>
+
+  <!-- The top bar of the webpage include FPU logo and Login button -->
+<nav class="navbar" bgcolor = "#f1f1f1">
+  <div class="container-fluid">
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+		<a href="https://www.fresno.edu" target="_blank"> 
+
+		<img id="rcorners3"  src="FPULogo.png" alt="Poster" height="70" width="150" />
+		</a>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+		      <li> <a href='http://localhost:5500/FoodPantry/login.php'><span class="glyphicon glyphicon-log-in"></span> <u>Login</u></a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<!-- The display items part of the page including filter, search, and item table -->
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-9 text-left"> 
+          <h1 class="serif" style="text-align:center">Welcome To The Food Pantry</h1>
+        <hr>
+        
+        <p>
+          <!-- Filter Feature to sort the items according to its type -->
+                <label>Filter</label>
+                <select id = 'filterText' onchange ="filter(value)">
+            <option disabled selected>Select</option>
+                  <option value = "1">Canned </option > 			   
+                  <option value = "2">Cereal</option>
+                  <option value = "3">Refrigerator</option>
+                  <option value = "4">Personal/Toiletries</option>
+                  <option value = "5">Other</option>
+                  <option value = "6" selected>All</option>			   
+                </select>
+
+                <!-- Search feature will display the matched item according to what user input -->
+          <label>Search</label>
+                <input type="text" id="myInput" placeholder="Enter Item's Name">	
+              </p>
+              <!-- Table that display the all the items from the google spreadsheet -->
+      <table class="table"  id="t01" style="width:100%">
+        <tr style="height:100px">
+      
+          <th ><u>Pictures<u/></th>
+            <th ><u>Item<u/></th>
+            <th><u>Status<u/></th>
+            <th><u>Limit<u/></th>
+          </tr>
+        
+          
+          <tbody id='t-body'>
+              <tr>
+            </tr>
+            </tbody>
+        
+        </table>
+
+
+          
+          <hr>
+    </div>
+    <!-- The right side information tab including open hours and Donation Info -->
+      <div class="col-sm-3 sidenav">
+          <div class="well">
+            <p>Open Hour:</p>
+            <p>Mon - Fri</p>
+            <p>11am - 3pm</p>
+            <p>Email:
+            <a href="mailto:osf.student@fresno.edu?Subject=Hello%20again" target="_top">osf.student@fresno.edu</a>
+            </p>
+            <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdJKy7aT9Gdb-U0bvPxESCMFe0YlrlBIfF8FfUYMoXV3z4ZEA/viewform" target="_blank">FPU Sunbird Pantry Express</a></p>
+
+          </div>
+	
+	  <div>
+
+  	  <p><b>Donation </b></p>
+
+
+        <button class="accordion">What can I donate?</button>
+        <div class="panel">
+          <p>You can donate things like easy open baked beans, easy open canned veggies, microwavable pasta meals, microwaveable soup,cereal, granola bars, rice, beans, frozen hot pockets, frozen burritos. </p> <p>You can also donate non-edible items like soap, pads, tampons, toothpaste, body wash, toothbrushes, deodorant, etc.</p> <p> If you are donating financially ,then go to this link : </p>
+        <p><a href="https://app.mobilecause.com/form/3nrUVQ?vid=78uzh" target="_blank">Financial Donation</a></p>
+
+        </div>
+
+        <button class="accordion">How can I donate?</button>
+        <div class="panel">
+          <p>You can directly donate to the FPU food pantry by dropping off the items during open hours.Address of FPU Food Pantry is 4847 E. Heaton Ave, Fresno CA, 93702.Map : <a href="https://www.google.com/maps/place/HH2,+4847+E+Heaton+Ave,+Fresno,+CA+93727/@36.7270994,-119.7365126,17z/data=!3m1!4b1!4m5!3m4!1s0x80945f03849c746d:0x4b5bb974e63a23a0!8m2!3d36.7270994!4d-119.7343239" target="_blank">Food Pantry</a></p> 
+        For finincial donation,you can directly donate online.You just need to go to this link : </p><p>
+          </p><p><a href="https://app.mobilecause.com/form/3nrUVQ?vid=78uzh" target="_blank">Financial Donation</a></p>
+
+        </div>  
+      </div>
+</body>
+    <script src="donate.js"></script>
+	
+</html>
